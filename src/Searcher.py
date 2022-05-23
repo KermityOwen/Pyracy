@@ -1,23 +1,37 @@
 import requests
-import os
+import urllib
 import re
 
 
-def search_for_title_http(title: str) -> str:
+def compile_search_url(searchterm: str):
     """
-    Search for the first found video with the title from youtube and return the html source for that page.
+    Compiles YouTube's url with the search term of argument
 
     Args:
-        title: Search terms of the page used to search for the video
+        searchterm: search term to be added url
 
     Returns:
-        HTML source for the page searched
+        url of the YouTube page when searchterm is searched
     """
     f = re.compile(r" ")
-    title = re.sub(f, "+", title)
-    url = "https://www.youtube.com/results?search_query=" + title
-    source = requests.get(url)
-    return source.content.decode("utf-8")
+    f_searchterm = re.sub(f, "+", searchterm)
+    url = "https://www.youtube.com/results?search_query=" + f_searchterm
+    return url
+
+
+def get_html_as_string(url: str) -> str:
+    """
+    Returns the html source for the url given
+
+    Args:
+        url: the url we are getting the html source from
+
+    Returns:
+        HTML source for url
+    """
+    request = urllib.request.urlopen(url)
+    source_byte = request.read()
+    return source_byte.decode("utf-8")
 
 
 def filter_video_links(source: str, n=50):
@@ -53,10 +67,3 @@ def list_slicer(url_list, size):
         New list of size "size"
     """
     return url_list[0:size]
-
-
-if __name__ == "__main__":
-    html_source = search_for_title_http("reverb fart")
-    urls = filter_video_links(html_source)
-    print(urls)
-
