@@ -17,4 +17,4 @@ def download_video(ys, path):
     try:
         ys.download(path)
     except FileNotFoundError:
-        print("Path not found. Redirecting download to %s" % path)
+        print("Path not found error")
