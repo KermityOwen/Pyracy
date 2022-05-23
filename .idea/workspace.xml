@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="244bfcc6-005b-4b3f-b535-d5bd77e40d1d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Pyracy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pyracy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Downloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Downloader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Searcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Searcher.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
