@@ -2,6 +2,7 @@
 > Haha, get it? Piracy...? Python...? Pyracy...? Nevermind forget it
 
 ### How it works:
+- Edit the config.json file to set your download path
 - Run the Pyracy.exe executable.
 - Type in your search term and your selection.
 - That's it! Check your download folder and it's there.
