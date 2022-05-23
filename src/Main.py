@@ -19,3 +19,5 @@ if __name__ == "__main__":
     Processor.display_titles(yts)
     ystream = Processor.specify_video(yts, int(input("Choice: ")) - 1)
     Downloader.download_video(ystream, config["dl_path"])
+    
+    input("\nENTER to end program")
