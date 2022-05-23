@@ -1,9 +1,7 @@
 import os
-import Processor
-import Searcher
 
 
-def download_video(ys, path=None):
+def download_video(ys, path):
     """
     Downloads video from pytube stream
 
@@ -14,14 +12,9 @@ def download_video(ys, path=None):
     Returns:
         None
     """
-    ys.download(path)
-
-
-if __name__ == "__main__":
-    search_url = Searcher.compile_search_url(str(input("Search: ")))
-    htmlsrc = Searcher.get_html_as_string(search_url)
-    urls = Searcher.filter_video_links(htmlsrc, 10)
-    yts = Processor.map_choices(urls)
-    Processor.display_titles(yts)
-    ystream = Processor.specify_video(yts, int(input("Choice: "))-1)
-    download_video(ystream, f"{os.getenv('USERPROFILE')}\\Downloads")
+    if path is None:
+        path = f"{os.getenv('USERPROFILE')}\\Downloads"
+    try:
+        ys.download(path)
+    except FileNotFoundError:
+        print("Path not found. Redirecting download to %s" % path)
