@@ -12,6 +12,13 @@ it without ever opening your browser.
 
 ---
 
+### How to download
+- Press the big green button that says "Code"
+- Download ZIP file
+- Extract and Voila! Easy and done!
+
+---
+
 ### How it works:
 - Edit the config.json file to set your download path
 - Run the Pyracy.exe executable.
@@ -23,16 +30,9 @@ it without ever opening your browser.
 
 ### Progress Goals:
 - :white_check_mark: Make it easier to use by having a compiled executable to install
-- Implement a GUI or attach it to a site
 - Turn the entire project "dependency-less" by studying the imported libraries 
 and how they work (Specifically Pytube and Requests)
-
----
-
-### How to download
-- Press the big green button that says Code
-- Download ZIP file
-- Extract and Voila! Easy and done!
+- Implement a GUI or attach it to a site
 
 ---
 
