@@ -1,5 +1,17 @@
 import pytube
+from pytube.cli import on_progress
+import os, sys
 
+'''
+def progress_function(stream, chunk, file_handle, bytes_remaining):
+    filesize = stream.filesize
+    current = ((filesize - bytes_remaining)/filesize)
+    percent = ('{0:.1f}').format(current*100)
+    progress = int(50*current)
+    status = '█' * progress + '-' * (50 - progress)
+    sys.stdout.write(' ↳ |{bar}| {percent}%\r'.format(bar=status, percent=percent))
+    sys.stdout.flush()
+'''
 
 def map_choices(urllist):
     """
@@ -12,7 +24,7 @@ def map_choices(urllist):
         list of pytube.YouTube objects mapped from urllist
     """
     yt_list = []
-    list(map(lambda og_url: yt_list.append(pytube.YouTube(og_url)), urllist))
+    list(map(lambda og_url: yt_list.append(pytube.YouTube(og_url, on_progress_callback=on_progress)), urllist))
     return yt_list
 
 
